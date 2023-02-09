@@ -1,4 +1,5 @@
-import { Box, Portal, SimpleGrid, Skeleton } from '@mantine/core'
+import { Box, Center, Portal, SimpleGrid, Skeleton, useMantineTheme } from '@mantine/core'
+import { IconPhoto } from '@tabler/icons-react'
 import { useState } from 'react'
 
 import GalleryImage from './galleryImage'
@@ -15,9 +16,11 @@ const Gallery = ({ images, isLoading }: Props) => {
   const [showOverlay, setShowOverlay] = useState(false)
   const [initialIndex, setInitialIndex] = useState(0)
 
+  const theme = useMantineTheme()
+
   return (
     <>
-      <Box>
+      <Box h={'100%'}>
         {isLoading && (
           <Skeleton
             h={{
@@ -25,9 +28,23 @@ const Gallery = ({ images, isLoading }: Props) => {
               sm: 400,
               md: 300,
             }}
-            my={'sm'}
+            py={'sm'}
           />
         )}
+
+        {images.length === 0 && !isLoading && (
+          <Center
+            w={'90%'}
+            h={'90%'}
+            m={'auto'}
+            color={theme.colorScheme === 'dark' ? 'dark.1' : 'gray.2'}
+            bg={theme.colorScheme === 'dark' ? 'dark.9' : 'gray.1'}
+            opacity={0.3}
+          >
+            <IconPhoto size={48} />
+          </Center>
+        )}
+
         <SimpleGrid
           cols={3}
           breakpoints={[

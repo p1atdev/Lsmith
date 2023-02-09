@@ -143,7 +143,7 @@ const Generator = () => {
             {performance && <Text align="end">Time: {performance.toFixed(2)}s</Text>}
 
             <Box
-              mah={isLargeScreen ? '80%' : '480px'}
+              h={isLargeScreen ? '80%' : '480px'}
               pos={'relative'}
               sx={{
                 overflowY: 'scroll',
