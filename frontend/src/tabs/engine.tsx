@@ -4,7 +4,6 @@ import {
   Container,
   Input,
   NativeSelect,
-  NumberInput,
   SimpleGrid,
   Space,
   Stack,
@@ -22,8 +21,8 @@ import NumberSliderInput from '../components/ui/numberSliderInput'
 
 import { api } from '~/api'
 import { engineFormAtom } from '~/atoms/engine'
+import BetterNumInput from '~/components/ui/betterNumInput'
 import { IMAGE_SIZE_STEP, MAX_IMAGE_SIZE, MIN_IMAGE_SIZE } from '~/utils/static'
-
 
 const Engine = () => {
   const [form, setForm] = useAtom(engineFormAtom)
@@ -104,6 +103,7 @@ const Engine = () => {
           <NumberSliderInput
             label={'Optimization Image Width'}
             defaultValue={form.opt_image_width}
+            placeholder={'512'}
             min={MIN_IMAGE_SIZE}
             max={MAX_IMAGE_SIZE}
             step={IMAGE_SIZE_STEP}
@@ -113,6 +113,7 @@ const Engine = () => {
           <NumberSliderInput
             label={'Optimization Image Height'}
             defaultValue={form.opt_image_height}
+            placeholder={'512'}
             min={MIN_IMAGE_SIZE}
             max={MAX_IMAGE_SIZE}
             step={IMAGE_SIZE_STEP}
@@ -128,11 +129,14 @@ const Engine = () => {
           </Input.Wrapper>
 
           <Input.Wrapper label={'Max batch size'}>
-            <NumberInput
+            <BetterNumInput
+              defaultValue={form.max_batch_size}
+              placeholder={'1'}
               min={1}
               max={32}
-              defaultValue={form.max_batch_size}
+              step={1}
               onChange={(value) => setForm({ ...form, max_batch_size: value })}
+              allowWheel
             />
           </Input.Wrapper>
 

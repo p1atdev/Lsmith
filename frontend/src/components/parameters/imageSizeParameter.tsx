@@ -24,6 +24,7 @@ const ImageSizeParameter = () => {
         <BetterNumInput
           defaultValue={parameters.image_width}
           value={parameters.image_width}
+          placeholder={'512'}
           min={MIN_IMAGE_SIZE}
           max={MAX_IMAGE_SIZE}
           step={IMAGE_SIZE_STEP}
@@ -52,6 +53,7 @@ const ImageSizeParameter = () => {
         <BetterNumInput
           defaultValue={parameters.image_height}
           value={parameters.image_height}
+          placeholder={'512'}
           min={MIN_IMAGE_SIZE}
           max={MAX_IMAGE_SIZE}
           step={IMAGE_SIZE_STEP}

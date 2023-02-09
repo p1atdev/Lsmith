@@ -15,6 +15,7 @@ const SeedParameter = () => {
         <BetterNumInput
           defaultValue={parameters.seed}
           value={parameters.seed}
+          placeholder={'-1'}
           min={-1}
           max={4294967295}
           step={1}

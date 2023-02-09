@@ -5,6 +5,7 @@ import BetterNumInput from './betterNumInput'
 
 interface Props extends InputWrapperBaseProps {
   defaultValue?: number
+  placeholder?: string
   min?: number
   max?: number
   step?: number
@@ -15,6 +16,7 @@ interface Props extends InputWrapperBaseProps {
 const NumberSliderInput = ({
   label,
   defaultValue = 768,
+  placeholder,
   min,
   max,
   step,
@@ -49,6 +51,7 @@ const NumberSliderInput = ({
           max={max}
           step={step}
           defaultValue={defaultValue}
+          placeholder={placeholder}
           precision={precision}
           w={'100px'}
           onChange={(e) => {

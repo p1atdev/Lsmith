@@ -30,6 +30,7 @@ const Parameters = () => {
       <NumberSliderInput
         label={'Steps'}
         defaultValue={parameters.steps}
+        placeholder={'50'}
         min={1}
         max={150}
         step={1}
@@ -43,6 +44,7 @@ const Parameters = () => {
       <NumberSliderInput
         label={'CFG Scale'}
         defaultValue={parameters.scale}
+        placeholder={'7.0'}
         min={1.0}
         max={100}
         step={0.5}
@@ -57,6 +59,7 @@ const Parameters = () => {
       <NumberSliderInput
         label={'Batch Count'}
         defaultValue={parameters.batch_count}
+        placeholder={'1'}
         min={1}
         max={100}
         step={1}
